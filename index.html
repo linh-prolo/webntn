@@ -639,7 +639,7 @@
             </div>
             <div class="hero-metrics">
               <div class="metric">
-                <strong>2025</strong>
+                <strong data-founded-year>2025</strong>
                 <span>Founded</span>
               </div>
               <div class="metric">
@@ -723,7 +723,7 @@
           <div class="cards-grid">
             <article class="card reveal">
               <div class="icon" aria-hidden="true">🗓</div>
-              <h3>Founded 2025</h3>
+              <h3>Founded <span data-founded-year>2025</span></h3>
               <p>Built with a clear ambition to serve Vietnam’s industrial growth with modern surface engineering services.</p>
             </article>
             <article class="card reveal">
@@ -924,11 +924,20 @@
   </div>
 
   <script>
+    const companyProfile = {
+      foundedYear: '2025'
+    };
+
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links a');
     const revealItems = document.querySelectorAll('.reveal');
     const sections = [...document.querySelectorAll('main section, footer')];
+    const foundedYearNodes = document.querySelectorAll('[data-founded-year]');
+
+    foundedYearNodes.forEach((node) => {
+      node.textContent = companyProfile.foundedYear;
+    });
 
     navToggle?.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('open');
