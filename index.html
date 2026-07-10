@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTN Vietnam JSC | Industrial Surface Engineering Solutions</title>
+  <meta
+    name="description"
+    content="NTN Vietnam JSC company profile website featuring industrial surface engineering solutions, thermal spray, corrosion protection, and engineering services."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-900: #0a1628;
+      --navy-800: #10203b;
+      --navy-700: #1a2f5e;
+      --navy-600: #274383;
+      --gold-500: #f0a500;
+      --gold-600: #e8820c;
+      --white: #ffffff;
+      --text-soft: rgba(255, 255, 255, 0.78);
+      --line: rgba(255, 255, 255, 0.12);
+      --card: rgba(255, 255, 255, 0.06);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+      --max-width: 1180px;
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(circle at top left, rgba(240, 165, 0, 0.12), transparent 24%),
+        radial-gradient(circle at right center, rgba(232, 130, 12, 0.08), transparent 20%),
+        linear-gradient(160deg, #08111d 0%, var(--navy-900) 35%, var(--navy-700) 100%);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::before {
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.34) 0 1px, transparent 1px),
+        radial-gradient(circle at 82% 22%, rgba(240, 165, 0, 0.75) 0 1.4px, transparent 1.4px),
+        radial-gradient(circle at 68% 68%, rgba(255, 255, 255, 0.22) 0 1px, transparent 1px),
+        radial-gradient(circle at 24% 78%, rgba(232, 130, 12, 0.65) 0 1.2px, transparent 1.2px);
+      opacity: 0.7;
+    }
+
+    body::after {
+      background:
+        linear-gradient(115deg, transparent 0 46%, rgba(255, 255, 255, 0.04) 46% 47%, transparent 47% 100%),
+        linear-gradient(65deg, transparent 0 52%, rgba(240, 165, 0, 0.04) 52% 53%, transparent 53% 100%);
+      opacity: 0.4;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .site-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--text-soft);
+      margin-bottom: 2rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(240, 165, 0, 0.28);
+      border-radius: 999px;
+      color: #ffd580;
+      background: rgba(240, 165, 0, 0.08);
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(10, 22, 40, 0.84);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-mark {
+      width: 2.8rem;
+      height: 2.8rem;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-500), var(--gold-600));
+      color: var(--navy-900);
+      font-size: 1.4rem;
+      box-shadow: 0 0 28px rgba(240, 165, 0, 0.35);
+    }
+
+    .brand small {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      font-weight: 600;
+      margin-top: 0.15rem;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 0.65rem 0.9rem;
+      font: inherit;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      padding: 0.65rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.94rem;
+      color: var(--text-soft);
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .nav-links a.active {
+      color: var(--white);
+      background: rgba(240, 165, 0, 0.14);
+    }
+
+    .hero {
+      padding: 92px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .hero-panel,
+    .feature-panel,
+    .quote-card,
+    .card,
+    .materials-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel {
+      padding: clamp(1.6rem, 4vw, 3rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -25% 38%;
+      height: 320px;
+      background: radial-gradient(circle, rgba(240, 165, 0, 0.18) 0%, transparent 70%);
+    }
+
+    .profile-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(240, 165, 0, 0.28);
+      border-radius: 999px;
+      background: rgba(240, 165, 0, 0.12);
+      color: #ffd580;
+      padding: 0.5rem 0.95rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.45rem);
+      margin-bottom: 1rem;
+      max-width: 10ch;
+    }
+
+    .hero .lead {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      color: rgba(255, 255, 255, 0.86);
+      margin-bottom: 1rem;
+      max-width: 60ch;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.4rem 0 1.8rem;
+    }
+
+    .service-tags span,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.65rem 0.95rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.95rem;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.6rem;
+    }
+
+    .metric {
+      padding: 1.1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .metric strong {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.3rem;
+      color: #ffd580;
+    }
+
+    .feature-panel {
+      padding: 1.5rem;
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    .panel-block {
+      padding: 1.2rem;
+      border-radius: 18px;
+      background: rgba(10, 22, 40, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .panel-block h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .logo-gear {
+      width: 4.8rem;
+      height: 4.8rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 2.15rem;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,0.25), transparent 28%),
+        linear-gradient(135deg, var(--gold-500), var(--gold-600));
+      color: var(--navy-900);
+      box-shadow: 0 0 36px rgba(240, 165, 0, 0.4);
+    }
+
+    .logo-type {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .logo-type small {
+      display: block;
+      font-size: 0.86rem;
+      letter-spacing: 0.2em;
+      color: var(--text-soft);
+      margin-top: 0.45rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .quote-card {
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-card::before {
+      content: "“";
+      position: absolute;
+      top: -0.1rem;
+      right: 1rem;
+      font-family: "Montserrat", sans-serif;
+      font-size: 7rem;
+      line-height: 1;
+      color: rgba(240, 165, 0, 0.16);
+    }
+
+    .director-name {
+      margin-top: 1.25rem;
+      color: #ffd580;
+      font-weight: 700;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card,
+    .materials-card {
+      padding: 1.4rem;
+      height: 100%;
+    }
+
+    .icon {
+      width: 3rem;
+      height: 3rem;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(240, 165, 0, 0.16), rgba(232, 130, 12, 0.2));
+      color: #ffd580;
+      font-size: 1.3rem;
+      margin-bottom: 0.95rem;
+    }
+
+    .card h3,
+    .materials-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .card p,
+    .materials-card p,
+    .muted {
+      color: var(--text-soft);
+    }
+
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .value-list,
+    .check-list {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .value-item,
+    .check-item {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .check-mark {
+      color: #8ff0b8;
+      font-size: 1.15rem;
+      line-height: 1.2;
+    }
+
+    .services-grid,
+    .materials-grid,
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .overview-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.6rem;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--line);
+    }
+
+    .footer-card p + p {
+      margin-top: 0.35rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .split-layout,
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .overview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 1rem;
+        left: 1rem;
+        padding: 0.65rem;
+        border-radius: 20px;
+        background: rgba(10, 22, 40, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero-metrics,
+      .services-grid,
+      .materials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .cards-grid,
+      .overview-grid,
+      .footer-card {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .brand-text {
+        display: none;
+      }
+
+      .service-tags {
+        gap: 0.6rem;
+      }
+
+      .service-tags span,
+      .pill {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="header">
+      <div class="container nav-bar">
+        <a class="brand" href="#home" aria-label="NTN Vietnam home">
+          <span class="brand-mark" aria-hidden="true">⚙</span>
+          <span class="brand-text">
+            NTN VIETNAM
+            <small>Industrial Surface Engineering</small>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">☰ Menu</button>
+        <nav>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#director">Director</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#spray">Thermal Spray</a></li>
+            <li><a href="#why">Why NTN</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="home">
+        <div class="container hero-grid">
+          <div class="hero-panel reveal">
+            <div class="profile-badge">▣ Company Profile 2026</div>
+            <div class="logo-lockup">
+              <div class="logo-gear" aria-hidden="true">⚙</div>
+              <div class="logo-type">
+                NTN
+                <small>VIETNAM JSC</small>
+              </div>
+            </div>
+            <h1>NTN VIETNAM – Industrial Surface Engineering Solutions</h1>
+            <p class="lead">Protect Metal · Extend Life · Create Value</p>
+            <p class="muted">
+              Cleaning · Surface Preparation · Thermal Spray · Corrosion Protection · Engineering Service
+            </p>
+            <div class="service-tags" aria-label="core services">
+              <span>✦ Cleaning</span>
+              <span>✦ Surface Preparation</span>
+              <span>✦ Thermal Spray</span>
+              <span>✦ Corrosion Protection</span>
+              <span>✦ Engineering Service</span>
+            </div>
+            <div class="hero-metrics">
+              <div class="metric">
+                <strong>2025</strong>
+                <span>Founded</span>
+              </div>
+              <div class="metric">
+                <strong>5 Core</strong>
+                <span>Service Lines</span>
+              </div>
+              <div class="metric">
+                <strong>01 Stop</strong>
+                <span>Industrial Solution</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="feature-panel reveal">
+            <div class="panel-block">
+              <h3>Company Name</h3>
+              <p class="muted">NTN Vietnam JSC</p>
+              <p class="muted">Công ty Cổ phần Sản xuất và Cung ứng NTN Việt Nam</p>
+            </div>
+            <div class="panel-block">
+              <h3>Leadership</h3>
+              <p class="muted">Đào Ngọc Minh Nam — Director</p>
+            </div>
+            <div class="panel-block">
+              <h3>Tagline</h3>
+              <p class="muted">Industrial Surface Engineering Solutions</p>
+            </div>
+            <div class="panel-block">
+              <h3>Focus Industries</h3>
+              <p class="muted">Surface treatment, thermal spray, anti-corrosion, asset restoration and engineering execution for demanding industrial environments.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="director">
+        <div class="container">
+          <div class="eyebrow reveal">Leadership Message</div>
+          <div class="two-column">
+            <div class="quote-card reveal">
+              <h2 class="section-title">Message from Director</h2>
+              <p class="section-intro">
+                Bức thông điệp đại diện cho định hướng phát triển bền vững, lấy chất lượng kỹ thuật và giá trị khách hàng làm trọng tâm.
+              </p>
+              <p>
+                <strong>VI:</strong> NTN Việt Nam cam kết mang đến những giải pháp kỹ thuật tiên tiến và dịch vụ chuyên nghiệp nhằm bảo vệ tài sản công nghiệp, nâng cao hiệu quả vận hành và tạo giá trị bền vững cho khách hàng.
+              </p>
+              <br>
+              <p>
+                <strong>EN:</strong> NTN Vietnam is committed to delivering advanced engineering solutions and professional services to protect industrial assets, enhance performance and create sustainable value for our customers.
+              </p>
+              <p class="director-name">Đào Ngọc Minh Nam, Director</p>
+            </div>
+            <div class="feature-panel reveal">
+              <div class="panel-block">
+                <h3>Industrial Commitment</h3>
+                <p class="muted">Professional execution, dependable quality and long-term value creation for every project.</p>
+              </div>
+              <div class="panel-block">
+                <h3>Service Philosophy</h3>
+                <p class="muted">Protect assets, improve uptime, and optimize lifecycle cost through advanced surface engineering.</p>
+              </div>
+              <div class="panel-block">
+                <h3>Slogan</h3>
+                <p class="muted">Protect Metal – Extend Life – Create Value</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="eyebrow reveal">About NTN Vietnam</div>
+          <h2 class="section-title reveal">Engineering Expertise for Surface Protection</h2>
+          <p class="section-intro reveal">
+            <strong>VI:</strong> Công ty Cổ phần Sản xuất và Cung ứng NTN Việt Nam là doanh nghiệp chuyên cung cấp các giải pháp kỹ thuật toàn diện trong lĩnh vực làm sạch bề mặt, phun phủ kim loại, chống ăn mòn và phục hồi thiết bị công nghiệp.
+            <br><br>
+            <strong>EN:</strong> NTN Vietnam JSC is a company specialising in providing comprehensive engineering solutions in surface preparation, thermal spray, corrosion protection and industrial equipment restoration.
+          </p>
+          <div class="cards-grid">
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">🗓</div>
+              <h3>Founded 2025</h3>
+              <p>Built with a clear ambition to serve Vietnam’s industrial growth with modern surface engineering services.</p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">🛠</div>
+              <h3>Engineering Expertise</h3>
+              <p>Specialised knowledge in cleaning, coating, protection and equipment restoration processes.</p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">🏭</div>
+              <h3>Industrial Solutions</h3>
+              <p>Reliable execution for plants, infrastructure and equipment operating in harsh industrial conditions.</p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">🚀</div>
+              <h3>Future Technology</h3>
+              <p>Forward-looking investment in advanced methods that increase lifespan, efficiency and value.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="vision">
+        <div class="container">
+          <div class="eyebrow reveal">Vision · Mission · Values</div>
+          <div class="split-layout">
+            <div class="card reveal">
+              <h2 class="section-title">Vision &amp; Mission</h2>
+              <div class="value-list">
+                <div class="value-item">
+                  <div class="icon" aria-hidden="true">🎯</div>
+                  <div>
+                    <h3>Vision / Tầm nhìn</h3>
+                    <p>Trở thành doanh nghiệp hàng đầu tại Việt Nam về giải pháp kỹ thuật xử lý bề mặt và bảo vệ kim loại công nghiệp.</p>
+                    <p class="muted">To become a leading company in Vietnam for industrial surface engineering and metal protection solutions.</p>
+                  </div>
+                </div>
+                <div class="value-item">
+                  <div class="icon" aria-hidden="true">🧭</div>
+                  <div>
+                    <h3>Mission / Sứ mệnh</h3>
+                    <p>Cung cấp giải pháp và dịch vụ chất lượng cao, tăng tuổi thọ thiết bị, giảm chi phí bảo trì và mang lại giá trị bền vững cho khách hàng.</p>
+                    <p class="muted">To deliver high-quality solutions and services that extend equipment life, reduce maintenance costs and bring sustainable value to customers.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card reveal">
+              <h2 class="section-title">Core Values</h2>
+              <div class="value-list">
+                <div class="value-item"><span class="check-mark">◆</span><div><strong>Quality</strong><br><span class="muted">Chất lượng là danh dự</span></div></div>
+                <div class="value-item"><span class="check-mark">◆</span><div><strong>Safety</strong><br><span class="muted">An toàn là ưu tiên</span></div></div>
+                <div class="value-item"><span class="check-mark">◆</span><div><strong>Innovation</strong><br><span class="muted">Đổi mới dẫn đầu</span></div></div>
+                <div class="value-item"><span class="check-mark">◆</span><div><strong>Integrity</strong><br><span class="muted">Uy tín tạo niềm tin</span></div></div>
+                <div class="value-item"><span class="check-mark">◆</span><div><strong>Commitment</strong><br><span class="muted">Cam kết dẫn đến cùng</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="overview">
+        <div class="container">
+          <div class="eyebrow reveal">Company Overview</div>
+          <h2 class="section-title reveal">Our Operational Strengths</h2>
+          <div class="overview-grid">
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">👷</div>
+              <h3>Experienced Team</h3>
+              <p>Skilled engineers and technicians with hands-on industrial project experience.</p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">⚙</div>
+              <h3>Modern Equipment</h3>
+              <p>Advanced tools and process technologies designed for efficient, high-quality execution.</p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">📋</div>
+              <h3>Quality Management</h3>
+              <p>Structured control systems aligned with consistent delivery and dependable performance.</p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">🤝</div>
+              <h3>Customer Focus</h3>
+              <p>Solutions tailored to operational needs, maintenance goals and long-term asset value.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="eyebrow reveal">Our Core Business</div>
+          <h2 class="section-title reveal">Integrated Technical Services</h2>
+          <div class="services-grid">
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">✨</div>
+              <h3>Laser Cleaning</h3>
+              <p>Làm sạch bề mặt bằng laser công nghệ cao</p>
+              <p class="muted">High-tech laser surface cleaning</p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">🪨</div>
+              <h3>Abrasive Blasting</h3>
+              <p>Phun cát, bi làm sạch bề mặt kim loại</p>
+              <p class="muted">Abrasive blasting for surface preparation</p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">🔥</div>
+              <h3>Thermal Spray</h3>
+              <p>Phun phủ kim loại bằng công nghệ tiên tiến</p>
+              <p class="muted">Advanced thermal spray application</p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">🛡</div>
+              <h3>Corrosion Protection</h3>
+              <p>Giải pháp bảo vệ chống ăn mòn cho công nghiệp</p>
+              <p class="muted">Corrosion protection solutions</p>
+            </article>
+            <article class="card reveal">
+              <div class="icon" aria-hidden="true">📐</div>
+              <h3>Engineering Service</h3>
+              <p>Tư vấn kỹ thuật, thi công, bảo trì và đào tạo</p>
+              <p class="muted">Engineering consulting, installation and training</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="spray">
+        <div class="container">
+          <div class="eyebrow reveal">Thermal Spray Solutions</div>
+          <div class="split-layout">
+            <div class="card reveal">
+              <h2 class="section-title">Protective Coating Expertise</h2>
+              <p>
+                <strong>VI:</strong> NTN Việt Nam cung cấp giải pháp phun phủ nhiệt cho mục tiêu chống ăn mòn, phục hồi bề mặt và nâng cao độ bền thiết bị trong môi trường công nghiệp khắc nghiệt.
+              </p>
+              <br>
+              <p class="muted">
+                <strong>EN:</strong> NTN Vietnam provides thermal spray solutions for corrosion resistance, surface restoration and durability enhancement in demanding industrial environments.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h2 class="section-title">Common Materials</h2>
+              <p class="section-intro">Materials commonly selected for performance, protection and lifecycle extension.</p>
+              <div class="service-tags">
+                <span class="pill">Aluminum (Nhôm)</span>
+                <span class="pill">Zinc (Kẽm)</span>
+                <span class="pill">Zinc Aluminum (Kẽm-nhôm)</span>
+                <span class="pill">Stainless Steel (Inox)</span>
+                <span class="pill">Nickel Base (Hợp kim Ni)</span>
+                <span class="pill">Ceramic (Gốm)</span>
+              </div>
+            </div>
+          </div>
+          <div class="materials-grid" style="margin-top: 1rem;">
+            <article class="materials-card reveal"><h3>Aluminum</h3><p>Nhôm</p></article>
+            <article class="materials-card reveal"><h3>Zinc</h3><p>Kẽm</p></article>
+            <article class="materials-card reveal"><h3>Zinc Aluminum</h3><p>Kẽm-nhôm</p></article>
+            <article class="materials-card reveal"><h3>Stainless Steel</h3><p>Inox</p></article>
+            <article class="materials-card reveal"><h3>Nickel Base</h3><p>Hợp kim Ni</p></article>
+            <article class="materials-card reveal"><h3>Ceramic</h3><p>Gốm</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="why">
+        <div class="container">
+          <div class="eyebrow reveal">Why Choose NTN?</div>
+          <h2 class="section-title reveal">A Trusted Industrial Partner</h2>
+          <div class="check-list">
+            <div class="check-item reveal"><span class="check-mark">✅</span><div><strong>One-Stop Solution</strong> – Cung cấp giải pháp tổng thể từ tư vấn đến thi công</div></div>
+            <div class="check-item reveal"><span class="check-mark">✅</span><div><strong>Engineering Expertise</strong> – Đội ngũ kỹ sư giàu kinh nghiệm, chuyên sâu</div></div>
+            <div class="check-item reveal"><span class="check-mark">✅</span><div><strong>Advanced Technology</strong> – Ứng dụng công nghệ hiện đại, thiết bị tiên tiến</div></div>
+            <div class="check-item reveal"><span class="check-mark">✅</span><div><strong>Reliable Quality</strong> – Kiểm soát chất lượng chặt chẽ, theo tiêu chuẩn quốc tế</div></div>
+            <div class="check-item reveal"><span class="check-mark">✅</span><div><strong>Customer Satisfaction</strong> – Cam kết mang lại giá trị và sự hài lòng cao nhất</div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-card reveal">
+          <div>
+            <h2>NTN Vietnam JSC</h2>
+            <p>Công ty Cổ phần Sản xuất và Cung ứng NTN Việt Nam</p>
+            <p class="muted">Industrial Surface Engineering Solutions</p>
+          </div>
+          <div>
+            <p><strong>Tagline:</strong> Protect Metal · Extend Life · Create Value</p>
+            <p class="muted">Copyright 2026 NTN Vietnam JSC</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links a');
+    const revealItems = document.querySelectorAll('.reveal');
+    const sections = [...document.querySelectorAll('main section, footer')];
+
+    navToggle?.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const setActiveLink = () => {
+      const offset = window.scrollY + 120;
+      let currentId = 'home';
+
+      sections.forEach((section) => {
+        if (section.offsetTop <= offset) {
+          currentId = section.id;
+        }
+      });
+
+      links.forEach((link) => {
+        const isActive = link.getAttribute('href') === `#${currentId}`;
+        link.classList.toggle('active', isActive);
+      });
+    };
+
+    setActiveLink();
+    window.addEventListener('scroll', setActiveLink, { passive: true });
+  </script>
+</body>
+</html>
