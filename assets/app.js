@@ -7,7 +7,9 @@ const lightboxImage = document.getElementById("lightboxImage");
 const closeLightboxButton = document.getElementById("closeLightbox");
 const animatedElements = document.querySelectorAll("[data-animate]");
 const posterButtons = document.querySelectorAll("[data-src]");
-const imagePathPattern = /^assets\/images\/[\w-]+\.webp$/i;
+const allowedImageSources = new Set(
+  Array.from(posterButtons, (button) => button.getAttribute("data-src")?.trim()).filter(Boolean)
+);
 
 const updateMenuButtonLabel = (isOpen) => {
   if (!menuButton) {
@@ -115,9 +117,6 @@ const closeLightbox = () => {
   }
 
   lightbox.close();
-  if (lightboxImage) {
-    lightboxImage.removeAttribute("src");
-  }
 };
 
 posterButtons.forEach((button) => {
@@ -128,7 +127,7 @@ posterButtons.forEach((button) => {
 
     const source = button.getAttribute("data-src")?.trim();
     const image = button.querySelector("img");
-    if (!source || !imagePathPattern.test(source)) {
+    if (!source || !allowedImageSources.has(source)) {
       return;
     }
 
@@ -146,7 +145,8 @@ lightbox?.addEventListener("click", (event) => {
   }
 });
 
-lightbox?.addEventListener("cancel", (event) => {
-  event.preventDefault();
-  closeLightbox();
+lightbox?.addEventListener("close", () => {
+  if (lightboxImage) {
+    lightboxImage.removeAttribute("src");
+  }
 });
