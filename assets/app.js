@@ -7,7 +7,7 @@ const lightboxImage = document.getElementById("lightboxImage");
 const closeLightboxButton = document.getElementById("closeLightbox");
 const animatedElements = document.querySelectorAll("[data-animate]");
 const posterButtons = document.querySelectorAll("[data-src]");
-const imagePathPattern = /^assets\/images\/page-(0[1-9]|1\d|20)\.webp$/;
+const imagePathPattern = /^assets\/images\/[\w-]+\.webp$/i;
 
 const updateMenuButtonLabel = (isOpen) => {
   if (!menuButton) {
@@ -15,6 +15,22 @@ const updateMenuButtonLabel = (isOpen) => {
   }
 
   menuButton.setAttribute("aria-label", isOpen ? "Đóng điều hướng" : "Mở điều hướng");
+};
+
+const buildLightboxAlt = (button, image, source) => {
+  const imageAlt = image?.getAttribute("alt")?.trim();
+  const buttonLabel = button.getAttribute("aria-label")?.trim();
+
+  if (imageAlt) {
+    return imageAlt;
+  }
+
+  if (buttonLabel) {
+    return buttonLabel;
+  }
+
+  const filename = source.split("/").pop()?.replace(/\.webp$/i, "").replace(/[-_]+/g, " ").trim();
+  return filename ? `Ảnh ${filename}` : "Ảnh phóng to";
 };
 
 const closeMenu = () => {
@@ -112,14 +128,12 @@ posterButtons.forEach((button) => {
 
     const source = button.getAttribute("data-src")?.trim();
     const image = button.querySelector("img");
-    const label = image?.getAttribute("alt") || button.getAttribute("aria-label") || "Ảnh hồ sơ năng lực phóng to";
-
     if (!source || !imagePathPattern.test(source)) {
       return;
     }
 
     lightboxImage.setAttribute("src", source);
-    lightboxImage.setAttribute("alt", label);
+    lightboxImage.setAttribute("alt", buildLightboxAlt(button, image, source));
     lightbox.showModal();
   });
 });
