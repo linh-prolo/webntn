@@ -7,9 +7,6 @@ const lightboxImage = document.getElementById("lightboxImage");
 const closeLightboxButton = document.getElementById("closeLightbox");
 const animatedElements = document.querySelectorAll("[data-animate]");
 const posterButtons = document.querySelectorAll("[data-src]");
-const allowedImageSources = new Set(
-  Array.from(posterButtons, (button) => button.getAttribute("data-src")?.trim()).filter(Boolean)
-);
 
 const updateMenuButtonLabel = (isOpen) => {
   if (!menuButton) {
@@ -18,6 +15,12 @@ const updateMenuButtonLabel = (isOpen) => {
 
   menuButton.setAttribute("aria-label", isOpen ? "Đóng điều hướng" : "Mở điều hướng");
 };
+
+updateMenuButtonLabel(false);
+
+const isAllowedLightboxSource = (source) => Array
+  .from(document.querySelectorAll("[data-src]"), (button) => button.getAttribute("data-src")?.trim())
+  .some((value) => value === source);
 
 const buildLightboxAlt = (button, image, source) => {
   const imageAlt = image?.getAttribute("alt")?.trim();
@@ -31,7 +34,7 @@ const buildLightboxAlt = (button, image, source) => {
     return buttonLabel;
   }
 
-  const filename = source.split("/").pop()?.replace(/\.webp$/i, "").replace(/[-_]+/g, " ").trim();
+  const filename = source.split("/").pop()?.replace(/\.[a-z0-9]+$/i, "").replace(/[-_]+/g, " ").trim();
   return filename ? `Ảnh ${filename}` : "Ảnh phóng to";
 };
 
@@ -127,7 +130,7 @@ posterButtons.forEach((button) => {
 
     const source = button.getAttribute("data-src")?.trim();
     const image = button.querySelector("img");
-    if (!source || !allowedImageSources.has(source)) {
+    if (!source || !isAllowedLightboxSource(source)) {
       return;
     }
 
