@@ -6,151 +6,312 @@
   <meta name="description" content="NTN Việt Nam – giải pháp xử lý bề mặt, phun phủ nhiệt, bảo vệ kim loại, gia công cơ khí và cung ứng thiết bị công nghiệp." />
   <meta name="theme-color" content="#04152d" />
   <title>NTN Việt Nam | Giải pháp bảo vệ kim loại</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
   <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="NTN Việt Nam">
-      <span class="brand-mark">NTN</span>
-      <span class="brand-copy"><strong>NTN VIỆT NAM</strong><small>Bảo vệ kim loại · Kiến tạo giá trị</small></span>
-    </a>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰</button>
-    <nav id="mainNav" class="main-nav" aria-label="Điều hướng chính">
-      <a href="#gioi-thieu">Giới thiệu</a>
-      <a href="#linh-vuc">Lĩnh vực</a>
-      <a href="#quy-trinh">Quy trình</a>
-      <a href="#nang-luc">Năng lực</a>
-      <a href="#doi-tac">Đối tác</a>
-      <a class="nav-cta" href="#lien-he">Liên hệ</a>
-    </nav>
+    <div class="header-shell">
+      <a class="brand" href="#top" aria-label="NTN Việt Nam">
+        <span class="brand-mark">NTN</span>
+        <span class="brand-copy">
+          <strong>NTN VIỆT NAM</strong>
+          <small>Bảo vệ kim loại · Kiến tạo giá trị</small>
+        </span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav" aria-label="Mở điều hướng">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="mainNav" class="main-nav" aria-label="Điều hướng chính">
+        <a href="#gioi-thieu">Giới thiệu</a>
+        <a href="#linh-vuc">Lĩnh vực</a>
+        <a href="#quy-trinh">Quy trình</a>
+        <a href="#nang-luc">Năng lực</a>
+        <a href="#doi-tac">Đối tác</a>
+        <a class="nav-cta" href="#lien-he">Liên hệ</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero" aria-label="Giới thiệu NTN Việt Nam">
-      <img src="assets/images/page-20.webp" alt="NTN Việt Nam – bảo vệ kim loại, kéo dài tuổi thọ thiết bị" fetchpriority="high" />
-      <div class="hero-overlay"></div>
-      <div class="hero-actions">
-        <a class="btn primary" href="#gioi-thieu">Khám phá hồ sơ năng lực</a>
-        <a class="btn ghost" href="tel:+8496240297">Gọi 096 240 297</a>
+      <img class="hero-media" src="assets/images/page-20.webp" alt="NTN Việt Nam – bảo vệ kim loại, kéo dài tuổi thọ thiết bị" fetchpriority="high" />
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="hero-kicker">NTN VIỆT NAM</p>
+          <h1>BẢO VỆ KIM LOẠI – KIẾN TẠO GIÁ TRỊ</h1>
+          <p class="hero-summary">Giải pháp xử lý bề mặt | Phun phủ nhiệt | Gia công cơ khí | Cung ứng thiết bị</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#gioi-thieu">Khám phá hồ sơ năng lực</a>
+            <a class="btn btn-ghost" href="tel:+8496240297">Liên hệ tư vấn</a>
+          </div>
+        </div>
       </div>
-      <a class="scroll-hint" href="#gioi-thieu" aria-label="Cuộn xuống">⌄</a>
+      <a class="scroll-hint" href="#gioi-thieu" aria-label="Cuộn xuống">
+        <span>Cuộn xuống</span>
+        <i></i>
+      </a>
     </section>
 
     <section class="intro-strip" id="gioi-thieu">
-      <div><strong>Giải pháp kỹ thuật toàn diện</strong><span>Xử lý bề mặt · Phun phủ nhiệt · Gia công cơ khí · Cung ứng thiết bị</span></div>
-      <a href="#lien-he">Nhận tư vấn kỹ thuật →</a>
-    </section>
-
-    <section class="profile-section light" data-title="Tổng quan công ty">
-      <div class="section-head">
-        <span>01</span><div><p>HỒ SƠ NĂNG LỰC</p><h2>Tổng quan công ty</h2></div>
-      </div>
-      <button class="poster" data-src="assets/images/page-02.webp" aria-label="Mở ảnh tổng quan công ty">
-        <img loading="lazy" src="assets/images/page-02.webp" alt="Trang tổng quan công ty NTN Việt Nam" />
-      </button>
-    </section>
-
-    <section class="profile-section light" id="linh-vuc" data-title="Lĩnh vực hoạt động chính">
-      <div class="section-head">
-        <span>02</span><div><p>NĂNG LỰC CỐT LÕI</p><h2>Lĩnh vực hoạt động chính</h2></div>
-      </div>
-      <button class="poster" data-src="assets/images/page-03.webp" aria-label="Mở ảnh lĩnh vực hoạt động chính">
-        <img loading="lazy" src="assets/images/page-03.webp" alt="Năm lĩnh vực hoạt động chính của NTN Việt Nam" />
-      </button>
-    </section>
-
-    <section class="profile-section dark" id="quy-trinh" data-title="Quy trình bảo vệ kim loại">
-      <div class="section-head inverse">
-        <span>03</span><div><p>HỆ THỐNG BẢO VỆ TOÀN DIỆN</p><h2>Quy trình bảo vệ kim loại</h2></div>
-      </div>
-      <button class="poster" data-src="assets/images/page-04.webp" aria-label="Mở ảnh quy trình bảo vệ kim loại">
-        <img loading="lazy" src="assets/images/page-04.webp" alt="Quy trình bảo vệ kim loại gồm 5 bước" />
-      </button>
-    </section>
-
-    <section class="profile-section dark" data-title="Làm sạch lớp sơn cũ">
-      <div class="section-head inverse">
-        <span>04</span><div><p>GIẢI PHÁP CHUYÊN BIỆT</p><h2>Làm sạch lớp sơn cũ trên Jig nhựa</h2></div>
-      </div>
-      <button class="poster" data-src="assets/images/page-05.webp" aria-label="Mở ảnh quy trình làm sạch lớp sơn cũ trên jig nhựa">
-        <img loading="lazy" src="assets/images/page-05.webp" alt="Quy trình làm sạch lớp sơn cũ trên Jig nhựa" />
-      </button>
-    </section>
-
-    <section class="profile-section light process-gallery" data-title="Quy trình làm sạch và ARC">
-      <div class="section-head">
-        <span>05</span><div><p>QUY TRÌNH TIÊU CHUẨN</p><h2>Làm sạch và phun phủ ARC</h2></div>
-      </div>
-      <div class="gallery-grid">
-        <button class="poster" data-src="assets/images/page-06.webp"><img loading="lazy" src="assets/images/page-06.webp" alt="Sơ đồ quy trình làm sạch và ARC" /></button>
-        <button class="poster" data-src="assets/images/page-07.webp"><img loading="lazy" src="assets/images/page-07.webp" alt="Bước 1 kiểm tra ngoại quan IQC" /></button>
-        <button class="poster" data-src="assets/images/page-08.webp"><img loading="lazy" src="assets/images/page-08.webp" alt="Bước 2 xử lý làm sạch bề mặt bằng hóa chất" /></button>
-        <button class="poster" data-src="assets/images/page-09.webp"><img loading="lazy" src="assets/images/page-09.webp" alt="Bước 3 rửa cao áp" /></button>
-        <button class="poster" data-src="assets/images/page-10.webp"><img loading="lazy" src="assets/images/page-10.webp" alt="Bước 4 phun cát tạo nhám bề mặt" /></button>
-        <button class="poster" data-src="assets/images/page-11.webp"><img loading="lazy" src="assets/images/page-11.webp" alt="Bước 5 phun phủ ARC" /></button>
-        <button class="poster" data-src="assets/images/page-12.webp"><img loading="lazy" src="assets/images/page-12.webp" alt="Bước 6 kiểm tra sau ARC" /></button>
-        <button class="poster" data-src="assets/images/page-13.webp"><img loading="lazy" src="assets/images/page-13.webp" alt="Bước 7 sấy khô" /></button>
-        <button class="poster" data-src="assets/images/page-14.webp"><img loading="lazy" src="assets/images/page-14.webp" alt="Bước 8 kiểm tra chất lượng OQC" /></button>
+      <div class="intro-shell">
+        <article class="intro-item" data-animate>
+          <span class="intro-icon" aria-hidden="true">XL</span>
+          <div>
+            <strong>Xử lý bề mặt</strong>
+            <p>Giải pháp kỹ thuật toàn diện cho độ bền vật liệu.</p>
+          </div>
+        </article>
+        <article class="intro-item" data-animate>
+          <span class="intro-icon" aria-hidden="true">PP</span>
+          <div>
+            <strong>Phun phủ nhiệt</strong>
+            <p>Tăng tuổi thọ thiết bị với hệ bảo vệ bề mặt chuyên sâu.</p>
+          </div>
+        </article>
+        <article class="intro-item" data-animate>
+          <span class="intro-icon" aria-hidden="true">CK</span>
+          <div>
+            <strong>Gia công cơ khí</strong>
+            <p>Năng lực triển khai chính xác cho nhu cầu công nghiệp.</p>
+          </div>
+        </article>
+        <article class="intro-item" data-animate>
+          <span class="intro-icon" aria-hidden="true">TB</span>
+          <div>
+            <strong>Cung ứng thiết bị</strong>
+            <p>Đồng hành cùng doanh nghiệp với hệ sinh thái giải pháp phù hợp.</p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="profile-section dark" id="nang-luc" data-title="Ưu điểm nổi bật">
-      <div class="section-head inverse">
-        <span>06</span><div><p>VÌ SAO CHỌN NTN</p><h2>Ưu điểm nổi bật</h2></div>
-      </div>
-      <button class="poster" data-src="assets/images/page-15.webp"><img loading="lazy" src="assets/images/page-15.webp" alt="Ưu điểm nổi bật của NTN Việt Nam" /></button>
-    </section>
-
-    <section class="profile-section dark two-up" data-title="Cam kết và định hướng">
-      <div class="section-head inverse">
-        <span>07</span><div><p>PHÁT TRIỂN BỀN VỮNG</p><h2>Cam kết và định hướng tương lai</h2></div>
-      </div>
-      <div class="gallery-grid two">
-        <button class="poster" data-src="assets/images/page-16.webp"><img loading="lazy" src="assets/images/page-16.webp" alt="An toàn, sức khỏe và môi trường" /></button>
-        <button class="poster" data-src="assets/images/page-17.webp"><img loading="lazy" src="assets/images/page-17.webp" alt="Định hướng phát triển tương lai" /></button>
+    <section class="profile-section section-light" data-number="01">
+      <div class="section-shell" data-animate>
+        <div class="section-copy">
+          <p class="section-label">HỒ SƠ NĂNG LỰC</p>
+          <h2 class="section-title">Tổng quan công ty</h2>
+        </div>
+        <button class="poster-card featured-card" data-src="assets/images/page-02.webp" aria-label="Mở ảnh tổng quan công ty">
+          <span class="poster-media">
+            <img loading="lazy" src="assets/images/page-02.webp" alt="Trang tổng quan công ty NTN Việt Nam" />
+          </span>
+        </button>
       </div>
     </section>
 
-    <section class="profile-section dark" data-title="Tầm nhìn và sứ mệnh">
-      <div class="section-head inverse">
-        <span>08</span><div><p>GIÁ TRỊ DOANH NGHIỆP</p><h2>Tầm nhìn · Sứ mệnh · Giá trị cốt lõi</h2></div>
+    <section class="profile-section section-dark" id="linh-vuc" data-number="02">
+      <div class="section-shell" data-animate>
+        <div class="section-copy">
+          <p class="section-label">NĂNG LỰC CỐT LÕI</p>
+          <h2 class="section-title">Lĩnh vực hoạt động chính</h2>
+        </div>
+        <button class="poster-card featured-card" data-src="assets/images/page-03.webp" aria-label="Mở ảnh lĩnh vực hoạt động chính">
+          <span class="poster-media">
+            <img loading="lazy" src="assets/images/page-03.webp" alt="Năm lĩnh vực hoạt động chính của NTN Việt Nam" />
+          </span>
+        </button>
       </div>
-      <button class="poster" data-src="assets/images/page-18.webp"><img loading="lazy" src="assets/images/page-18.webp" alt="Tầm nhìn, sứ mệnh và giá trị cốt lõi NTN" /></button>
     </section>
 
-    <section class="profile-section dark" id="doi-tac" data-title="Đối tác">
-      <div class="section-head inverse">
-        <span>09</span><div><p>CÙNG HỢP TÁC · CÙNG THÀNH CÔNG</p><h2>Đối tác của chúng tôi</h2></div>
+    <section class="profile-section section-light" id="quy-trinh" data-number="03">
+      <div class="section-shell" data-animate>
+        <div class="section-copy">
+          <p class="section-label">HỆ THỐNG BẢO VỆ TOÀN DIỆN</p>
+          <h2 class="section-title">Quy trình bảo vệ kim loại</h2>
+        </div>
+        <button class="poster-card featured-card" data-src="assets/images/page-04.webp" aria-label="Mở ảnh quy trình bảo vệ kim loại">
+          <span class="poster-media">
+            <img loading="lazy" src="assets/images/page-04.webp" alt="Quy trình bảo vệ kim loại gồm 5 bước" />
+          </span>
+        </button>
       </div>
-      <button class="poster" data-src="assets/images/page-19.webp"><img loading="lazy" src="assets/images/page-19.webp" alt="Các đối tác của NTN Việt Nam" /></button>
     </section>
 
-    <section class="contact" id="lien-he">
-      <button class="poster contact-poster" data-src="assets/images/page-01.webp"><img loading="lazy" src="assets/images/page-01.webp" alt="Thông tin liên hệ NTN Việt Nam" /></button>
-      <div class="contact-card">
-        <p>LIÊN HỆ TƯ VẤN</p>
-        <h2>Trao đổi cùng đội ngũ NTN</h2>
-        <a href="tel:+8496240297">096 240 297</a>
-        <a href="mailto:info@ntnvn.com">info@ntnvn.com</a>
-        <a href="https://ntnvn.com" target="_blank" rel="noopener">ntnvn.com</a>
-        <p class="address">Số 36, Xóm Trại, Quan Âm, Xã Phúc Thịnh, Thành phố Hà Nội, Việt Nam</p>
+    <section class="profile-section section-dark" data-number="04">
+      <div class="section-shell" data-animate>
+        <div class="section-copy">
+          <p class="section-label">GIẢI PHÁP CHUYÊN BIỆT</p>
+          <h2 class="section-title">Làm sạch lớp sơn cũ trên Jig nhựa</h2>
+        </div>
+        <button class="poster-card featured-card" data-src="assets/images/page-05.webp" aria-label="Mở ảnh quy trình làm sạch lớp sơn cũ trên jig nhựa">
+          <span class="poster-media">
+            <img loading="lazy" src="assets/images/page-05.webp" alt="Quy trình làm sạch lớp sơn cũ trên Jig nhựa" />
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="profile-section section-light" data-number="05">
+      <div class="section-shell" data-animate>
+        <div class="section-copy">
+          <p class="section-label">QUY TRÌNH TIÊU CHUẨN</p>
+          <h2 class="section-title">Làm sạch và phun phủ ARC</h2>
+        </div>
+        <div class="gallery-grid">
+          <button class="poster-card" data-src="assets/images/page-06.webp" aria-label="Mở ảnh sơ đồ quy trình làm sạch và ARC">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-06.webp" alt="Sơ đồ quy trình làm sạch và ARC" /></span>
+          </button>
+          <button class="poster-card" data-src="assets/images/page-07.webp" aria-label="Mở ảnh bước 1 kiểm tra ngoại quan IQC">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-07.webp" alt="Bước 1 kiểm tra ngoại quan IQC" /></span>
+          </button>
+          <button class="poster-card" data-src="assets/images/page-08.webp" aria-label="Mở ảnh bước 2 xử lý làm sạch bề mặt bằng hóa chất">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-08.webp" alt="Bước 2 xử lý làm sạch bề mặt bằng hóa chất" /></span>
+          </button>
+          <button class="poster-card" data-src="assets/images/page-09.webp" aria-label="Mở ảnh bước 3 rửa cao áp">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-09.webp" alt="Bước 3 rửa cao áp" /></span>
+          </button>
+          <button class="poster-card" data-src="assets/images/page-10.webp" aria-label="Mở ảnh bước 4 phun cát tạo nhám bề mặt">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-10.webp" alt="Bước 4 phun cát tạo nhám bề mặt" /></span>
+          </button>
+          <button class="poster-card" data-src="assets/images/page-11.webp" aria-label="Mở ảnh bước 5 phun phủ ARC">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-11.webp" alt="Bước 5 phun phủ ARC" /></span>
+          </button>
+          <button class="poster-card" data-src="assets/images/page-12.webp" aria-label="Mở ảnh bước 6 kiểm tra sau ARC">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-12.webp" alt="Bước 6 kiểm tra sau ARC" /></span>
+          </button>
+          <button class="poster-card" data-src="assets/images/page-13.webp" aria-label="Mở ảnh bước 7 sấy khô">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-13.webp" alt="Bước 7 sấy khô" /></span>
+          </button>
+          <button class="poster-card" data-src="assets/images/page-14.webp" aria-label="Mở ảnh bước 8 kiểm tra chất lượng OQC">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-14.webp" alt="Bước 8 kiểm tra chất lượng OQC" /></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-section section-dark" id="nang-luc" data-number="06">
+      <div class="section-shell" data-animate>
+        <div class="section-copy">
+          <p class="section-label">VÌ SAO CHỌN NTN</p>
+          <h2 class="section-title">Ưu điểm nổi bật</h2>
+        </div>
+        <button class="poster-card featured-card" data-src="assets/images/page-15.webp" aria-label="Mở ảnh ưu điểm nổi bật của NTN Việt Nam">
+          <span class="poster-media">
+            <img loading="lazy" src="assets/images/page-15.webp" alt="Ưu điểm nổi bật của NTN Việt Nam" />
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="profile-section section-light" data-number="07">
+      <div class="section-shell" data-animate>
+        <div class="section-copy">
+          <p class="section-label">PHÁT TRIỂN BỀN VỮNG</p>
+          <h2 class="section-title">Cam kết và định hướng tương lai</h2>
+        </div>
+        <div class="duo-grid">
+          <button class="poster-card" data-src="assets/images/page-16.webp" aria-label="Mở ảnh an toàn sức khỏe và môi trường">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-16.webp" alt="An toàn, sức khỏe và môi trường" /></span>
+          </button>
+          <button class="poster-card" data-src="assets/images/page-17.webp" aria-label="Mở ảnh định hướng phát triển tương lai">
+            <span class="poster-media"><img loading="lazy" src="assets/images/page-17.webp" alt="Định hướng phát triển tương lai" /></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-section section-dark" data-number="08">
+      <div class="section-shell" data-animate>
+        <div class="section-copy">
+          <p class="section-label">GIÁ TRỊ DOANH NGHIỆP</p>
+          <h2 class="section-title">Tầm nhìn · Sứ mệnh · Giá trị cốt lõi</h2>
+        </div>
+        <button class="poster-card featured-card" data-src="assets/images/page-18.webp" aria-label="Mở ảnh tầm nhìn sứ mệnh và giá trị cốt lõi">
+          <span class="poster-media">
+            <img loading="lazy" src="assets/images/page-18.webp" alt="Tầm nhìn, sứ mệnh và giá trị cốt lõi NTN" />
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="profile-section section-light" id="doi-tac" data-number="09">
+      <div class="section-shell" data-animate>
+        <div class="section-copy">
+          <p class="section-label">CÙNG HỢP TÁC · CÙNG THÀNH CÔNG</p>
+          <h2 class="section-title">Đối tác của chúng tôi</h2>
+        </div>
+        <button class="poster-card featured-card" data-src="assets/images/page-19.webp" aria-label="Mở ảnh các đối tác của NTN Việt Nam">
+          <span class="poster-media">
+            <img loading="lazy" src="assets/images/page-19.webp" alt="Các đối tác của NTN Việt Nam" />
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="contact-section" id="lien-he">
+      <div class="contact-shell">
+        <button class="poster-card contact-poster" data-src="assets/images/page-01.webp" aria-label="Mở ảnh thông tin liên hệ NTN Việt Nam" data-animate>
+          <span class="poster-media">
+            <img loading="lazy" src="assets/images/page-01.webp" alt="Thông tin liên hệ NTN Việt Nam" />
+          </span>
+        </button>
+
+        <div class="contact-card" data-animate>
+          <p class="section-label">LIÊN HỆ TƯ VẤN</p>
+          <h2 class="section-title">Trao đổi cùng đội ngũ NTN</h2>
+          <div class="contact-list">
+            <a class="contact-item contact-phone" href="tel:+8496240297">
+              <span class="contact-icon" aria-hidden="true">✦</span>
+              <span>
+                <small>Điện thoại</small>
+                <strong>096 240 297</strong>
+              </span>
+            </a>
+            <a class="contact-item" href="mailto:info@ntnvn.com">
+              <span class="contact-icon" aria-hidden="true">✉</span>
+              <span>
+                <small>Email</small>
+                <strong>info@ntnvn.com</strong>
+              </span>
+            </a>
+            <a class="contact-item" href="https://ntnvn.com" target="_blank" rel="noopener">
+              <span class="contact-icon" aria-hidden="true">⌁</span>
+              <span>
+                <small>Website</small>
+                <strong>ntnvn.com</strong>
+              </span>
+            </a>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">⌂</span>
+              <span>
+                <small>Địa chỉ</small>
+                <strong>Số 36, Xóm Trại, Quan Âm, Xã Phúc Thịnh, Thành phố Hà Nội, Việt Nam</strong>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div><strong>NTN VIỆT NAM., JSC</strong><span>Bảo vệ kim loại · Kéo dài tuổi thọ thiết bị · Tạo nên giá trị công nghiệp</span></div>
-    <a href="#top">Lên đầu trang ↑</a>
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-brand">
+        <strong>NTN VIỆT NAM</strong>
+        <span>Bảo vệ kim loại · Kéo dài tuổi thọ thiết bị · Tạo nên giá trị công nghiệp</span>
+      </div>
+      <a class="footer-top" href="#top">Lên đầu trang</a>
+    </div>
   </footer>
 
-  <dialog id="lightbox" class="lightbox">
-    <button id="closeLightbox" aria-label="Đóng">×</button>
+  <dialog id="lightbox" class="lightbox" aria-label="Xem ảnh phóng to">
+    <button id="closeLightbox" class="lightbox-close" type="button" aria-label="Đóng">
+      <span></span>
+      <span></span>
+    </button>
     <img id="lightboxImage" alt="Ảnh hồ sơ năng lực phóng to" />
   </dialog>
+
   <script src="assets/app.js"></script>
 </body>
 </html>
