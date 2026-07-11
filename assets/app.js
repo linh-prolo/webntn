@@ -7,6 +7,28 @@ const lightboxImage = document.getElementById("lightboxImage");
 const closeLightboxButton = document.getElementById("closeLightbox");
 const animatedElements = document.querySelectorAll("[data-animate]");
 const posterButtons = document.querySelectorAll("[data-src]");
+const allowedImageSources = new Set([
+  "assets/images/page-01.webp",
+  "assets/images/page-02.webp",
+  "assets/images/page-03.webp",
+  "assets/images/page-04.webp",
+  "assets/images/page-05.webp",
+  "assets/images/page-06.webp",
+  "assets/images/page-07.webp",
+  "assets/images/page-08.webp",
+  "assets/images/page-09.webp",
+  "assets/images/page-10.webp",
+  "assets/images/page-11.webp",
+  "assets/images/page-12.webp",
+  "assets/images/page-13.webp",
+  "assets/images/page-14.webp",
+  "assets/images/page-15.webp",
+  "assets/images/page-16.webp",
+  "assets/images/page-17.webp",
+  "assets/images/page-18.webp",
+  "assets/images/page-19.webp",
+  "assets/images/page-20.webp"
+]);
 
 const updateMenuButtonLabel = (isOpen) => {
   if (!menuButton) {
@@ -17,10 +39,6 @@ const updateMenuButtonLabel = (isOpen) => {
 };
 
 updateMenuButtonLabel(false);
-
-const isAllowedLightboxSource = (source) => Array
-  .from(document.querySelectorAll("[data-src]"), (button) => button.getAttribute("data-src")?.trim())
-  .some((value) => value === source);
 
 const buildLightboxAlt = (button, image, source) => {
   const imageAlt = image?.getAttribute("alt")?.trim();
@@ -34,7 +52,7 @@ const buildLightboxAlt = (button, image, source) => {
     return buttonLabel;
   }
 
-  const filename = source.split("/").pop()?.replace(/\.[a-z0-9]+$/i, "").replace(/[-_]+/g, " ").trim();
+  const filename = source.split("/").pop()?.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").trim();
   return filename ? `Ảnh ${filename}` : "Ảnh phóng to";
 };
 
@@ -130,7 +148,7 @@ posterButtons.forEach((button) => {
 
     const source = button.getAttribute("data-src")?.trim();
     const image = button.querySelector("img");
-    if (!source || !isAllowedLightboxSource(source)) {
+    if (!source || !allowedImageSources.has(source)) {
       return;
     }
 

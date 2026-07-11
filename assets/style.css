@@ -101,6 +101,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 28px;
+  height: var(--header-height);
   min-height: var(--header-height);
 }
 
