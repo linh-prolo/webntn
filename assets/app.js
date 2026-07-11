@@ -7,6 +7,15 @@ const lightboxImage = document.getElementById("lightboxImage");
 const closeLightboxButton = document.getElementById("closeLightbox");
 const animatedElements = document.querySelectorAll("[data-animate]");
 const posterButtons = document.querySelectorAll("[data-src]");
+const imagePathPattern = /^assets\/images\/page-(0[1-9]|1\d|20)\.webp$/;
+
+const updateMenuButtonLabel = (isOpen) => {
+  if (!menuButton) {
+    return;
+  }
+
+  menuButton.setAttribute("aria-label", isOpen ? "Đóng điều hướng" : "Mở điều hướng");
+};
 
 const closeMenu = () => {
   if (!menuButton || !navigation) {
@@ -15,6 +24,7 @@ const closeMenu = () => {
 
   navigation.classList.remove("open");
   menuButton.setAttribute("aria-expanded", "false");
+  updateMenuButtonLabel(false);
   document.body.classList.remove("menu-open");
 };
 
@@ -40,6 +50,7 @@ if (menuButton && navigation) {
   menuButton.addEventListener("click", () => {
     const isOpen = navigation.classList.toggle("open");
     menuButton.setAttribute("aria-expanded", String(isOpen));
+    updateMenuButtonLabel(isOpen);
     document.body.classList.toggle("menu-open", isOpen);
   });
 
@@ -99,15 +110,16 @@ posterButtons.forEach((button) => {
       return;
     }
 
-    const source = button.getAttribute("data-src");
+    const source = button.getAttribute("data-src")?.trim();
     const image = button.querySelector("img");
+    const label = image?.getAttribute("alt") || button.getAttribute("aria-label") || "Ảnh hồ sơ năng lực phóng to";
 
-    if (!source) {
+    if (!source || !imagePathPattern.test(source)) {
       return;
     }
 
-    lightboxImage.src = source;
-    lightboxImage.alt = image?.alt || "Ảnh hồ sơ năng lực phóng to";
+    lightboxImage.setAttribute("src", source);
+    lightboxImage.setAttribute("alt", label);
     lightbox.showModal();
   });
 });
