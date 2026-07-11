@@ -1,0 +1,14 @@
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('mainNav');
+menuBtn?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+const bar=document.getElementById('progressBar');
+const updateProgress=()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max>0?scrollY/max*100:0)+'%'};
+addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+const dialog=document.getElementById('lightbox');
+const full=document.getElementById('lightboxImage');
+const close=document.getElementById('closeLightbox');
+document.querySelectorAll('.poster').forEach(btn=>btn.addEventListener('click',()=>{full.src=btn.dataset.src;dialog.showModal();}));
+close.addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&dialog.open)dialog.close();});
