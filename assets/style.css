@@ -222,19 +222,22 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   padding: 0.75rem 1.4rem;
   border-radius: 999px;
   border: 2px solid rgba(255, 255, 255, 0.42);
-  color: var(--white) !important;
+  color: var(--white);
   font-weight: 700;
   transition: background var(--t), transform var(--t), border-color var(--t), color var(--t);
 }
 
 .nav-login::after { display: none; }
 
+.main-nav .nav-login { color: var(--white); }
+
 .nav-login:hover {
   border-color: var(--accent);
-  color: var(--accent) !important;
   background: rgba(232, 160, 32, 0.08);
   transform: translateY(-2px);
 }
+
+.main-nav .nav-login:hover { color: var(--accent); }
 
 /* ============================================================
    HERO
