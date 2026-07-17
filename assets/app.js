@@ -180,47 +180,13 @@ if (statsSection && "IntersectionObserver" in window) {
    CONTACT FORM VALIDATION
    ============================================================ */
 if (contactForm) {
-  /** Show an error under a field */
-  const showError = (inputId, message) => {
-    const input = document.getElementById(inputId);
-    const error = document.getElementById(`${inputId.replace("contact", "").toLowerCase()}Error`);
-    input?.classList.add("error");
-    if (error) error.textContent = message;
-  };
-
-  /** Clear error state for a field */
-  const clearError = inputId => {
-    const input = document.getElementById(inputId);
-    const errorId = inputId
-      .replace("contactN", "n")
-      .replace("contactP", "p")
-      .replace("contactE", "e")
-      .replace("contactM", "m")
-      .replace("ame",     "ameError")
-      .replace("hone",    "honeError")
-      .replace("mail",    "mailError")
-      .replace("essage",  "essageError");
-    // Simpler approach: derive error id from field id
-    const fieldKey = inputId.replace("contact", "").charAt(0).toLowerCase()
-      + inputId.replace("contact", "").slice(1);
-    const error = document.getElementById(`${fieldKey}Error`);
-    input?.classList.remove("error");
-    if (error) error.textContent = "";
-  };
-
-  const isValidPhone = v => /^[\d\s\+\-\(\)]{8,15}$/.test(v);
-  const isValidEmail = v => !v || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-
-  /* Derive correct error-element id from field id */
-  const errorId = fieldId => {
-    const map = {
-      contactName:    "nameError",
-      contactPhone:   "phoneError",
-      contactEmail:   "emailError",
-      contactMessage: "messageError",
-    };
-    return map[fieldId] || null;
-  };
+  /** Map field id → error element id */
+  const errorId = fieldId => ({
+    contactName:    "nameError",
+    contactPhone:   "phoneError",
+    contactEmail:   "emailError",
+    contactMessage: "messageError",
+  }[fieldId] || null);
 
   const setError = (fieldId, message) => {
     const input = document.getElementById(fieldId);
@@ -235,6 +201,10 @@ if (contactForm) {
     input?.classList.remove("error");
     if (errEl) errEl.textContent = "";
   };
+
+  /** At least 8 digits (ignoring spaces, dashes, parens, leading +) */
+  const isValidPhone = v => (v.match(/\d/g) || []).length >= 8 && /^[\+\d][\d\s\-\(\)]{7,}$/.test(v);
+  const isValidEmail = v => !v || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
   /* Live clear on typing */
   ["contactName", "contactPhone", "contactEmail", "contactMessage"].forEach(id => {
